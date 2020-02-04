@@ -1,4 +1,4 @@
-package com.example.notes;
+package com.example.notes.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.notes.R;
 import com.example.notes.modelClass.Note;
 import java.util.ArrayList;
 import butterknife.BindView;
@@ -18,7 +20,7 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
     private Context mContext;
     private ArrayList<Note> mNoteArrayList;
 
-    protected NoteItemAdapter(Context mContext, ArrayList<Note> mNoteArrayList) {
+    public NoteItemAdapter(Context mContext, ArrayList<Note> mNoteArrayList) {
         this.mContext = mContext;
         this.mNoteArrayList = mNoteArrayList;
     }

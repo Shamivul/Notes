@@ -6,4 +6,10 @@
                 " With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km, \n" +
                 "extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea,\n"+
                 "which give the country a distinct geographical entity.\n"</string>
+
+    <string name="new_note_text">New Note</string>
+    <string name="Add_title_text">Add your title here</string>
+    <string name="Add_content_text">Add your content here</string>
+    <string name="add_text">Add</string>
+    <string name="fill_fields_text">Please fill all the fields</string>
 </resources>

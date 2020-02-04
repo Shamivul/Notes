@@ -4,8 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
+import com.example.notes.Activities.AddNoteActivity;
+import com.example.notes.Adapter.NoteItemAdapter;
 import com.example.notes.modelClass.Note;
 
 import java.text.DateFormat;
@@ -23,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.notes_item_recycler_view)
     RecyclerView notesRecyclerView;
 
+    @BindView(R.id.new_note_tv)
+    TextView newNoteTv;
+
     //vars
     private ArrayList<Note> noteArrayList = new ArrayList<>();
     private NoteItemAdapter noteItemAdapter;
@@ -36,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
         setAdapterRecyclerView();
 
         addItemToNotesList();
+
+        newNoteTv.setOnClickListener(view -> {
+            gotoNewNoteActivity();
+        });
+    }
+
+    //go to AddNoteActivity to add new Note
+    private void gotoNewNoteActivity() {
+        startActivity(new Intent(new Intent(this, AddNoteActivity.class)));
     }
 
     //add items to the list

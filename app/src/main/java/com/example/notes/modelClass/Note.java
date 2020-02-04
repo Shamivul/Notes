@@ -1,10 +1,26 @@
 package com.example.notes.modelClass;
 
-public class Note {
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
+
+@Entity
+public class Note implements Serializable {
 
     //vars
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "noteText")
     private String noteText;
+
+    @ColumnInfo(name = "createdAt")
     private String createdAt;
 
     //Constructor to set objects Manually
@@ -12,6 +28,11 @@ public class Note {
         this.title = title;
         this.noteText = noteText;
         this.createdAt = createdAt;
+    }
+
+    //creating null object
+    public Note() {
+
     }
 
     //attr getters and setters
@@ -38,5 +59,13 @@ public class Note {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
