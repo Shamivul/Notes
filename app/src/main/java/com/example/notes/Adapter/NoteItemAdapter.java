@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notes.R;
@@ -19,10 +20,12 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
     //vars
     private Context mContext;
     private ArrayList<Note> mNoteArrayList;
+    private OnNoteClickListener onNoteClickListener;
 
     public NoteItemAdapter(Context mContext, ArrayList<Note> mNoteArrayList) {
         this.mContext = mContext;
         this.mNoteArrayList = mNoteArrayList;
+        onNoteClickListener = (OnNoteClickListener)mContext;
     }
 
     @NonNull
@@ -45,6 +48,9 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
     //view holder class for the NotesItemAdapter
     protected class NoteViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.note_container)
+        ConstraintLayout noteContainer;
+
         @BindView(R.id.item_title_tv)
         TextView noteTitleTv;
 
@@ -58,6 +64,13 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
         private NoteViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+
+            noteContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onNoteClickListener.onNoteClick(mNoteArrayList.get(getAdapterPosition()));
+                }
+            });
         }
 
         //binding item to item view
@@ -66,6 +79,10 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
             noteCreatedTimeTv.setText(mNoteArrayList.get(getAdapterPosition()).getCreatedAt());
             noteDescriptionTv.setText(mNoteArrayList.get(getAdapterPosition()).getNoteText());
         }
+    }
+
+    public interface OnNoteClickListener{
+        void  onNoteClick(Note note);
     }
 
 }

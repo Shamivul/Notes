@@ -12,4 +12,5 @@
     <string name="Add_content_text">Add your content here</string>
     <string name="add_text">Add</string>
     <string name="fill_fields_text">Please fill all the fields</string>
+    <string name="save_text">Save</string>
 </resources>
