@@ -67,9 +67,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
         });
 
-        headerTitleTv.setOnClickListener(view -> {
-            onBackPressed();
-        });
+        headerTitleTv.setOnClickListener(view -> onBackPressed());
 
     }
 

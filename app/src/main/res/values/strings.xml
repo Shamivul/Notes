@@ -15,4 +15,6 @@
     <string name="save_text">Save</string>
     <string name="create_new_note">Add Note</string>
     <string name="view_note_title">View Note</string>
+    <string name="no_note_text">There are no notes</string>
+
 </resources>

@@ -12,13 +12,15 @@
 
     <TextView
         android:id="@+id/item_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:text="@string/note_title_text"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/item_created_time_tv"
@@ -52,7 +54,6 @@
         android:textColor="?android:textColorPrimary"
         android:layout_marginTop="5dp"
         android:text="@string/note_description_text"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"/>
