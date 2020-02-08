@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -37,6 +39,9 @@ public class AddNoteActivity extends AppCompatActivity {
     @BindView(R.id.add_note_tv)
     TextView addNoteTv;
 
+    @BindView(R.id.header_title)
+    TextView headerTitleTv;
+
     private static NotesDataBaseClass notesDataBaseClass;
     private static Note note;
 
@@ -60,6 +65,10 @@ public class AddNoteActivity extends AppCompatActivity {
                 Toast.makeText(this,R.string.fill_fields_text,Toast.LENGTH_SHORT).show();
             }
 
+        });
+
+        headerTitleTv.setOnClickListener(view -> {
+            onBackPressed();
         });
 
     }
@@ -90,5 +99,10 @@ public class AddNoteActivity extends AppCompatActivity {
             Log.d(TAG, "onPostExecute: "+isCancelled());
             onCancelled();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

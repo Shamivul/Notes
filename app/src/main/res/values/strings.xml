@@ -2,15 +2,17 @@
     <string name="app_name">Notes</string>
     <string name="note_title_text">My Speech</string>
     <string name="note_created_time_text">03&#45;02&#45;2020 15&#45;23&#45;56</string>
-    <string name="note_description_text">"One of the oldest civilisations in the world, India is a mosaic of multicultural experiences.\n" +
-                " With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km, \n" +
-                "extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea,\n"+
-                "which give the country a distinct geographical entity.\n"</string>
+    <string name="note_description_text">"One of the oldest civilisations in the world, India is a mosaic of multicultural experiences."
+                " With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km,"
+                "extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea,"
+                "which give the country a distinct geographical entity."</string>
 
     <string name="new_note_text">New Note</string>
     <string name="Add_title_text">Add your title here</string>
     <string name="Add_content_text">Add your content here</string>
-    <string name="add_text">Add</string>
+    <string name="add_text">Create note</string>
     <string name="fill_fields_text">Please fill all the fields</string>
     <string name="save_text">Save</string>
+    <string name="create_new_note">Add Note</string>
+    <string name="view_note_title">View Note</string>
 </resources>

@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.notes.R;
@@ -28,6 +29,9 @@ public class ViewNoteActivity extends AppCompatActivity {
     @BindView(R.id.view_note_content_tv)
     TextView viewNoteEditTv;
 
+    @BindView(R.id.header_title)
+    TextView headerTitleTv;
+
     private Note note = new Note();
 
     @Override
@@ -42,10 +46,22 @@ public class ViewNoteActivity extends AppCompatActivity {
 
         setNoteView();
 
+        headerTitleTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
     }
 
     private void setNoteView() {
         viewNoteTitleTv.setText(note.getTitle());
         viewNoteEditTv.setText(note.getNoteText());
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
