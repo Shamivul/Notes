@@ -2,14 +2,8 @@ package com.example.notes.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.notes.R;
@@ -46,12 +40,7 @@ public class ViewNoteActivity extends AppCompatActivity {
 
         setNoteView();
 
-        headerTitleTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        headerTitleTv.setOnClickListener(view -> onBackPressed());
 
     }
 

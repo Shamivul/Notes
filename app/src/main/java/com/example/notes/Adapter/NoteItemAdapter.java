@@ -25,7 +25,7 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
     public NoteItemAdapter(Context mContext, ArrayList<Note> mNoteArrayList) {
         this.mContext = mContext;
         this.mNoteArrayList = mNoteArrayList;
-        onNoteClickListener = (OnNoteClickListener)mContext;
+        this.onNoteClickListener = (OnNoteClickListener)mContext;
     }
 
     @NonNull
@@ -65,12 +65,7 @@ public class NoteItemAdapter extends RecyclerView.Adapter<NoteItemAdapter.NoteVi
             super(itemView);
             ButterKnife.bind(this,itemView);
 
-            noteContainer.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onNoteClickListener.onNoteClick(mNoteArrayList.get(getAdapterPosition()));
-                }
-            });
+            noteContainer.setOnClickListener(view -> onNoteClickListener.onNoteClick(mNoteArrayList.get(getAdapterPosition())));
         }
 
         //binding item to item view

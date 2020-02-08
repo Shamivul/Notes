@@ -12,7 +12,7 @@
 
     <TextView
         android:id="@+id/item_title_tv"
-        android:layout_width="230dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/note_title_text"
         android:maxLines="1"
